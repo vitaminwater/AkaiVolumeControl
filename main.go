@@ -28,8 +28,7 @@ func processMQTTEvent(mqtt_event map[string]interface{}) {
 	id := mqtt_event["id"].(float64)
 	if evt == "pot" && id == 1 {
 		value := mqtt_event["v"].(float64)
-		volume := (int)(value / 127 * 100)
-		log.Println("/usr/bin/pactl", "set-sink-volume", "bluez_sink.E0_E5_CF_67_F1_E0.a2dp_sink", fmt.Sprintf("%d%%", volume))
+		volume := (int)(value / 127 * 150)
 		cmd := exec.Command("/usr/bin/pactl", "set-sink-volume", "bluez_sink.E0_E5_CF_67_F1_E0.a2dp_sink", fmt.Sprintf("%d%%", volume))
 		err := cmd.Run()
 		if err != nil {
