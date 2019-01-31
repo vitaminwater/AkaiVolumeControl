@@ -30,8 +30,6 @@ import (
 	MQTT "github.com/eclipse/paho.mqtt.golang"
 )
 
-// bluez_sink.E0_E5_CF_67_F1_E0.a2d
-
 var (
 	kvExpr = regexp.MustCompile(`(([A-Z0-9a-z_]+) ?= ?(-?[A-Z0-9_a-z.]+))+`)
 
